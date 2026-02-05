@@ -16,8 +16,9 @@ backend.use(cors({
 backend.use(routes);
 
 //step 1 - connext with mongodb
-const conn = "mongodb+srv://shubham:shubham@cluster-ssm.n7nro2x.mongodb.net/"
-mongoose.connect(conn)
+console.log("Mongo URI:", process.env.MONGO_URL);
+// const conn = "mongodb+srv://shubham:shubham@cluster-ssm.n7nro2x.mongodb.net/"
+mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         const PORT = process.env.PORT || 5002;
         backend.listen(PORT, () => {
