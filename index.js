@@ -10,7 +10,7 @@ dotenv.config();
 backend.use(cors({
     origin: ["https://smart-stock-manager-shubham-devs-projects-0d08649b.vercel.app/"],
     methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
-    credentials: true
+    credentials: true,
 }))
 
 //step3 - goto routes
