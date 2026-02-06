@@ -14,6 +14,9 @@ backend.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }))
 
+// VERY IMPORTANT (handles preflight)
+backend.options("*", cors());
+
 //step3 - goto routes
 backend.use(routes);
 
