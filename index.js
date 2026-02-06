@@ -10,6 +10,7 @@ dotenv.config();
 backend.use(cors({
     origin: ["http://localhost:5173", "http://localhost:5174", "https://smart-stock-manager-shubham-devs-projects-0d08649b.vercel.app/"],
     methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
+    credentials: true
 }))
 
 //step3 - goto routes
@@ -20,7 +21,7 @@ console.log("Mongo URI:", process.env.MONGO_URL);
 // const conn = "mongodb+srv://shubham:shubham@cluster-ssm.n7nro2x.mongodb.net/"
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
-        const PORT = process.env.PORT || 5002;
+        const PORT = process.env.PORT || 5001;
         backend.listen(PORT, () => {
             console.log(`connect with mongodb`);
             console.log(`http://localhost:${PORT}/`);

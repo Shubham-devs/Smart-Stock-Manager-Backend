@@ -17,7 +17,6 @@ exports.saveBill = async (req, res) => {
             paymentMethod,
         } = req.body;
 
-
         // ================================
         // 1. VALIDATE & UPDATE STOCK
         // ================================
