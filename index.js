@@ -8,9 +8,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 //step 2 - allow frontend 
 backend.use(cors({
-    origin: ["https://smart-stock-manager-shubham-devs-projects-0d08649b.vercel.app/"],
-    methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
+    origin: "https://smart-stock-manager.vercel.app",
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }))
 
 //step3 - goto routes
